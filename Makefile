@@ -6,7 +6,7 @@
 #    By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:13:23 by rel-isma          #+#    #+#              #
-#    Updated: 2023/04/09 02:03:50 by rel-isma         ###   ########.fr        #
+#    Updated: 2023/04/11 17:24:57 by rel-isma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Imlx
 
 SOURCES = main.c utils.c
-NAME = FRACT
+NAME = fractol
 
 OBJECTS = $(SOURCES:%.c=%.o)
 
