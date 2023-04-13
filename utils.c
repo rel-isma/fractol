@@ -6,7 +6,7 @@
 /*   By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/08 17:03:58 by rel-isma          #+#    #+#             */
-/*   Updated: 2023/04/12 23:31:48 by rel-isma         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:58:00 by rel-isma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ int	get_color(int iter, int max_iter)
 
 void	ft_maping(t_complex *z, int x, int y, t_data *data)
 {
-	z->re = 0;
-	z->im = 0;
 	z->re = (x - WIDTH / 2) * (4.0 / WIDTH * data->zoom) + data->move_x;
 	z->im = (y - HEIGHT / 2) * (4.0 / HEIGHT * data->zoom) + data->move_y;
 }

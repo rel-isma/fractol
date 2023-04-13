@@ -6,7 +6,7 @@
 #    By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:13:23 by rel-isma          #+#    #+#              #
-#    Updated: 2023/04/12 23:22:50 by rel-isma         ###   ########.fr        #
+#    Updated: 2023/04/13 17:12:42 by rel-isma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -Imlx
 
-SOURCES = main.c utils.c ft_strcmp.c ft_mandelbrot.c ft_julia.c ft_mlx_hook.c
+SOURCES = main.c utils.c ft_strcmp.c ft_mandelbrot.c ft_julia.c ft_mlx_hook.c ft_fractol_bonus.c
 NAME = fractol
 
 OBJECTS = $(SOURCES:%.c=%.o)

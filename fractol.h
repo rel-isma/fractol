@@ -6,7 +6,7 @@
 /*   By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 21:01:09 by rel-isma          #+#    #+#             */
-/*   Updated: 2023/04/12 23:43:38 by rel-isma         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:15:14 by rel-isma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 # define HEIGHT 800
 # define MAX_ITERATIONS 100
 # define MANDELBROT 1
-# define MANDELBROT_BONUS 3
+# define FRACTOL_BONUS 3
 # define JULIA 2
 # define ON_DESTROY 17
 typedef struct s_complex
@@ -65,6 +65,6 @@ int			ft_close(t_data *data);
 void		ft_maping(t_complex *z, int x, int y, t_data *data);
 void		draw(t_data *data);
 int			ft_key_hook(int key, t_data *data);
-int			ft_mandelbrot_bonus(t_complex c, int max_iter);
+int			ft_fractol_bonus(t_complex c, int max_iter);
 
 #endif

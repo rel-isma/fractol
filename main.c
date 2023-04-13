@@ -6,7 +6,7 @@
 /*   By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 21:51:52 by rel-isma          #+#    #+#             */
-/*   Updated: 2023/04/12 23:44:41 by rel-isma         ###   ########.fr       */
+/*   Updated: 2023/04/13 17:18:35 by rel-isma         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	draw(t_data *data)
 				c.im = data->j_im;
 				iter = ft_julia(z, c, data->max_iter);
 			}
+			else if (data->fractol == FRACTOL_BONUS)
+				iter = ft_fractol_bonus(z, data->max_iter);
 			my_mlx_pixel_put(data, x, y, get_color(iter, data->max_iter));
 			x++;
 		}
@@ -80,8 +82,8 @@ void	check_args(int ac, char *av[], t_data *data)
 		data->fractol = MANDELBROT;
 	else if (strcmp(av[1], "julia") == 0)
 		data->fractol = JULIA;
-	else if (strcmp(av[1], "mandelbrot_bonus") == 0)
-        data->fractol = MANDELBROT_BONUS;
+	else if (strcmp(av[1], "fractol_bonus") == 0)
+        data->fractol = FRACTOL_BONUS;
 	else
 	{
 		write(2, "Error\n", 6);
