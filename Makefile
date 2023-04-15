@@ -6,44 +6,38 @@
 #    By: rel-isma <rel-isma@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/04 12:13:23 by rel-isma          #+#    #+#              #
-#    Updated: 2023/04/13 17:12:42 by rel-isma         ###   ########.fr        #
+#    Updated: 2023/04/15 00:55:37 by rel-isma         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Imlx
+CFLAGS = -Wall -Wextra -Werror
 
-SOURCES = main.c utils.c ft_strcmp.c ft_mandelbrot.c ft_julia.c ft_mlx_hook.c ft_fractol_bonus.c
+SOURCES = main.c utils.c ft_strcmp.c ft_mandelbrot.c ft_julia.c ft_mlx_hook.c ft_fractol_bonus.c ft_check_args.c
 NAME = fractol
+NAME_BOUNS = fractol
 
-OBJECTS = $(SOURCES:%.c=%.o)
+OBJECTS = $(SOURCES:%.c=obj/%.o)
 
-
-# NAME = push_swap
-
-# LIBFT_PATH  = ./libft
-# LIBFT_NAME  = ft
 
 all: $(NAME)
 
-# libft:
-# 	make -C $(LIBFT_PATH)
+obj/%.o: %.c fractol.h | obj
+	$(CC) $(CFLAGS) -c $< -o $@ -g
 
-%.o: %.c fractol.h 
-	$(CC)  $(CFLAGS) -c $< -o $@ -g
+obj:
+	mkdir obj
 
-# bonus: libft $(NAME_CH)
+bonus: $(NAME_BOUNS)
 
 $(NAME): $(OBJECTS)
 	$(CC) $(OBJECTS) -lmlx -framework OpenGL -framework AppKit -o $(NAME)
-	
-clean:
-	rm -rf $(OBJECTS)
-#   make clean -C $(LIBFT_PATH)
 
+$(NAME_BOUNS): 
+
+clean:
+	rm -rf obj
 fclean: clean
 	rm -rf $(NAME)
-#   make fclean -C $(LIBFT_PATH)
-
 re: fclean all
